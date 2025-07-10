@@ -1,2 +1,2 @@
-# credenza-groups-ui
-Frontend for Credenza Groups
+# deriva-groups-ui
+Frontend for DERIVA Groups
