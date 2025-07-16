@@ -1,2 +1,2 @@
 # deriva-groups-ui
-Frontend for DERIVA Groups
+Management frontend for DERIVA Groups
