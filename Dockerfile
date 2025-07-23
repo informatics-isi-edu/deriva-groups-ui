@@ -1,7 +1,7 @@
 # Multi-stage build for React + nginx
 FROM node:24-slim AS builder
 
-WORKDIR /app
+WORKDIR /deriva-groups-ui
 
 # Accept build arguments
 ARG VITE_BASE_URL
@@ -31,10 +31,10 @@ RUN yarn build
 FROM nginx:alpine
 
 # Copy built assets from builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /deriva-groups-ui/dist /usr/share/nginx/html
 
 # Copy nginx configuration
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY  --from=builder /deriva-groups-ui/config/nginx.conf /etc/nginx/nginx.conf
 
 # Expose port 80
 EXPOSE 80
